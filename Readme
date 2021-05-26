@@ -1,0 +1,43 @@
+## creacion del modelo de clasificacion
+
+para el desarrollo de la prueba se utilizaron las siguientes herramientas:
+
+- jupyter notebook, las librerias utilizadas fueron:
+    pandas
+    sklearn
+    seabons
+    numpy
+    matplotlib
+-para el desarrollo del endpoint se utilizo el framework Fastapi y como servidor se uso uvicorn    
+
+para cumplir con la solucion se desarrollo el modelo de machine learning en jupyter notebook y se deplego un endpoint desarrollado en python con el framework antes mencionado, en el se puede consultar si un cliente debe ser incluido o no en la campaña de marketing.
+
+
+
+
+#### carga de datos y analisis exploratorio
+
+1.se procedio a la carga de datos del repositorio mediante la funcion read_to_csv de la libreria pandas
+2. se valido la cantidad de columnas, tipos de datos, se corrigieron campos que contenian valores con espacios ya qaue despues seria necesaria dicha correccion.
+3. se convirtieron las variables categoricas en dummies (Education, Marital status)
+4. se calculo la edad con base en el año de nacimiento para trabajar el modelo con edad como variable continua y no con el campo año de nacimiento.
+5. se crearon graficas para las variables conel fin de analizar el comportamiento de cada una.
+6. se procedio a dividir el dataset en dos uno para entrenamiento del modelo y otro para testear los resultados.
+7. se realizo la prueba con un modelo de KNeighborsClassifier con los paramtros por default
+8. se realizo el testeo a dicho modelo y arrojo un score de 0.82
+9. se realizo la prueba con un modelo de RandomForestClassifier con los paramtros por default
+10. se testeo modelo y arrojo un score de 0.88
+11. se procede a crear el archivo el archivo binario con la libreria pickle mediante la cual se ejcutara el modelo de ml.
+12. se procedio a crear la estructura del endpoint de acuerdo a como quedo definida la entrada en el modelo de ml, esto se hace en el archivo endpointStructure.py
+13. se procede a crear la app en la cual se define como entrada de datos la clase definida en la estructura del endpoint
+14. se crea main de la app
+
+nota: en la parte final de jupyter notebook se encuentran tres ejemplos en formato json para realizar las pruebas del endpoint.
+en el repositorio se incluye evidencia del test realizado desde el endpoint.
+en el repositorio se incluye archivo de datos para relaizar test, es necesario convertir a json los registros a utilizar en la prueba.
+
+
+
+
+
+ 
